@@ -2,7 +2,7 @@ import {AppBar,Toolbar,Box} from '@mui/material'
 import logo from '../../images/encabezado-wellspring.png';
 import styles from './Nav.module.css'
 export default function Nav (){
-    return <AppBar>
+    return <AppBar position="static">
         <Toolbar>
         <Box>
                   <a href="/">

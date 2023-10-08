@@ -6,7 +6,10 @@ function App() {
 
 
   return (
- <Container>
+ <Container
+ maxWidth='xl'
+ 
+ >
   <Outlet/>
  </Container>
   )
