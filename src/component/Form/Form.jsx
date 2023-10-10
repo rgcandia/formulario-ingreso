@@ -5,6 +5,7 @@ import Postulantes from './Postulantes/Postulantes';
 import { useState } from 'react';
 import { updateForm } from '../../redux/slice';
 import Applicant from './Applicant/Applicant';
+import styles from './Form.module.css'
 export default function Form (){
     //  constantes
     const dispatch = useDispatch();
@@ -21,7 +22,7 @@ export default function Form (){
         const { value, id } = e.target;
         dispatch(updateForm({...form,[id]:value}))
     }
-    return (<Box sx={{width:'50%', marginTop:'30px'}}>
+    return (<Box className={styles.form}>
 
         <TextField
         id='email'
