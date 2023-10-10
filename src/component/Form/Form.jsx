@@ -1,4 +1,4 @@
-import {Box, TextField, Typography, IconButton} from '@mui/material'
+import {Box, TextField, Typography, IconButton, Button} from '@mui/material'
 import { useDispatch,useSelector } from 'react-redux'
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import Postulantes from './Postulantes/Postulantes';
@@ -42,6 +42,10 @@ export default function Form (){
             </IconButton>
         </Box>
        {form.postulantes.length > 0 && <Applicant/>}
+
+       <Box className={styles.send}>
+       <Button variant='outlined' >Enviar</Button>
+       </Box>
         <Postulantes isOpen={isOpen} handleClose={handleClose}/>
     </Box>)
 }
