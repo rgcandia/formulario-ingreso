@@ -1,7 +1,7 @@
-import { Box, Typography, TextField, MenuItem } from "@mui/material" 
+import { Box, Typography, TextField, MenuItem, IconButton } from "@mui/material" 
 import { useState } from "react";
 import { useDispatch} from "react-redux";
-import Postulantes from "../Postulantes";
+import SaveIcon from '@mui/icons-material/Save';
 import styles from './Form.module.css'
 export default function Form (){
     //variables
@@ -30,6 +30,7 @@ export default function Form (){
       }
     return (<Box className={styles.form}>
         <Typography variant="h6" textAlign='center'>DATOS DEL POSTULANTE</Typography>
+       
         <Box className={styles.items}>
         <TextField
      id='nombreCompletoAlumno'
@@ -131,6 +132,10 @@ export default function Form (){
 
         </Box>
         
+        <Box sx={{display:'flex', alignItems:'center'}}>
+        <Typography variant='body2'><strong>Guardar</strong></Typography>    
+        <IconButton><SaveIcon color='primary'/></IconButton>
+        </Box>
 
         </Box>)
 }
