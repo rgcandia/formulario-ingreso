@@ -10,6 +10,10 @@ export default function Form (){
         fechaNacimiento:null, 
         nivel:null,
         colegioAnterior:null,
+        nombreCompletoPadre1:null,
+        nombreCompletoPadre2:null,
+        celularPadre1:null,
+        celularPadre2:null,
 
     })
     const dispatch = useDispatch();
@@ -82,14 +86,48 @@ export default function Form (){
       <TextField
      id='colegioAnterior'
      type='text'
-     label='Jardin/Colegio Anterior'
+     label='Jardin/Colegio al que asiste'
      value={postulantes.colegioAnterior||""}
+     onChange={handleChange}
+     fullWidth
+     
+     />
+  <TextField
+     id='nombreCompletoPadre1'
+     type='text'
+     label='Nombre y Apellido progenitor/a 1'
+     value={postulantes.nombreCompletoPadre1||""}
      onChange={handleChange}
      fullWidth
      required
      />
-
-
+     <TextField
+     id='celularPadre1'
+     type='text'
+     label='Celular de contacto'
+     value={postulantes.celularPadre1||""}
+     onChange={handleChange}
+     fullWidth
+     required
+     />
+<TextField
+     id='nombreCompletoPadre2'
+     type='text'
+     label='Nombre y Apellido progenitor/a 2'
+     value={postulantes.nombreCompletoPadre2||""}
+     onChange={handleChange}
+     fullWidth
+     
+     />
+     <TextField
+     id='celularPadre2'
+     type='text'
+     label='Celular de contacto'
+     value={postulantes.celularPadre2||""}
+     onChange={handleChange}
+     fullWidth
+     
+     />
 
         </Box>
         
