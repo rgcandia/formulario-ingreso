@@ -6,9 +6,17 @@
     margin-bottom: 20px;
 }
 .items{
+    width: 50%;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     
+}
+
+@media(max-width:450px){
+    .items{
+        padding: 10px;
+        width: 100%;
+    }
 }

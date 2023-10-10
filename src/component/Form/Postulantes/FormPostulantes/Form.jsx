@@ -6,9 +6,11 @@ import styles from './Form.module.css'
 export default function Form (){
     //variables
     const [postulantes,setPostutalntes] = useState({
-        nombreCompleto:null,
+        nombreCompletoAlumno:null,
         fechaNacimiento:null, 
-        nivel:null,   
+        nivel:null,
+        colegioAnterior:null,
+
     })
     const dispatch = useDispatch();
     
@@ -26,10 +28,10 @@ export default function Form (){
         <Typography variant="h6" textAlign='center'>DATOS DEL POSTULANTE</Typography>
         <Box className={styles.items}>
         <TextField
-     id='nombreCompleto'
+     id='nombreCompletoAlumno'
      type='text'
      label='Nombre y Apellido'
-     value={postulantes.nombreCompleto||""}
+     value={postulantes.nombreCompletoAlumno||""}
      onChange={handleChange}
      fullWidth
      required
@@ -76,6 +78,18 @@ export default function Form (){
         <MenuItem value="Secundaria6">Secundaria 6</MenuItem>
         
       </TextField>
+
+      <TextField
+     id='colegioAnterior'
+     type='text'
+     label='Jardin/Colegio Anterior'
+     value={postulantes.colegioAnterior||""}
+     onChange={handleChange}
+     fullWidth
+     required
+     />
+
+
 
         </Box>
         
