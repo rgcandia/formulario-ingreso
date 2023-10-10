@@ -23,7 +23,9 @@ export default function Form (){
         dispatch(updateForm({...form,[id]:value}))
     }
     return (<Box className={styles.form}>
-
+      <Box className={styles.send} >
+       <Button variant='outlined' >Enviar</Button>
+       </Box>
         <TextField
         id='email'
         type='email'
@@ -43,9 +45,7 @@ export default function Form (){
         </Box>
        {form.postulantes.length > 0 && <Applicant/>}
 
-       <Box className={styles.send}>
-       <Button variant='outlined' >Enviar</Button>
-       </Box>
+     
         <Postulantes isOpen={isOpen} handleClose={handleClose}/>
     </Box>)
 }
