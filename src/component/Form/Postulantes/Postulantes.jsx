@@ -34,6 +34,6 @@ export default function Postulantes ({isOpen,handleClose}){
     </Toolbar>
 </AppBar>
 
-<Form/>
+<Form handleClose={handleClose}/>
     </Dialog>)
 }

@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useDispatch} from "react-redux";
 import SaveIcon from '@mui/icons-material/Save';
 import styles from './Form.module.css'
-export default function Form (){
+import {setPostulantes} from '../../../../redux/slice.js'
+export default function Form ({handleClose}){
     //variables
     const [postulantes,setPostutalntes] = useState({
         nombreCompletoAlumno:null,
@@ -28,7 +29,13 @@ export default function Form (){
         const {value,name} = e.target;
         setPostutalntes({...postulantes,[name]:value})
       }
-    return (<Box className={styles.form}>
+      const handleSubmit = (e)=>{
+        e.preventDefault();
+        dispatch(setPostulantes(postulantes));
+        alert('Ejemplo de alerta, postulante guardado');
+        handleClose();
+      }
+    return (<Box className={styles.form} component='form' onSubmit={handleSubmit}>
         <Typography variant="h6" textAlign='center'>DATOS DEL POSTULANTE</Typography>
        
         <Box className={styles.items}>
@@ -134,7 +141,7 @@ export default function Form (){
         
         <Box sx={{display:'flex', alignItems:'center'}}>
         <Typography variant='body2'><strong>Guardar</strong></Typography>    
-        <IconButton><SaveIcon color='primary'/></IconButton>
+        <IconButton type='submit' ><SaveIcon color='primary'/></IconButton>
         </Box>
 
         </Box>)

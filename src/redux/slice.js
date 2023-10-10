@@ -13,10 +13,13 @@ export const stateSlice = createSlice({
   reducers: {
     updateForm:(state,action)=>{
     state.form = action.payload
+    },
+    setPostulantes:(state,action)=>{
+      state.form.postulantes.push(action.payload)
     }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { updateForm } = stateSlice.actions
+export const { updateForm ,setPostulantes} = stateSlice.actions
 export default stateSlice.reducer
