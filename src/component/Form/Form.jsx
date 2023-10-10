@@ -4,6 +4,7 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import Postulantes from './Postulantes/Postulantes';
 import { useState } from 'react';
 import { updateForm } from '../../redux/slice';
+import Applicant from './Applicant/Applicant';
 export default function Form (){
     //  constantes
     const dispatch = useDispatch();
@@ -39,7 +40,7 @@ export default function Form (){
                 <PersonAddIcon color='primary'/>
             </IconButton>
         </Box>
-      
+       {form.postulantes.length > 0 && <Applicant/>}
         <Postulantes isOpen={isOpen} handleClose={handleClose}/>
     </Box>)
 }
