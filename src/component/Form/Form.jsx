@@ -23,10 +23,11 @@ export default function Form (){
         dispatch(updateForm({...form,[id]:value}))
     }
     return (<Box className={styles.form}>
-      <Box className={styles.send} >
-       <Button variant='outlined' >Enviar</Button>
-       </Box>
-        <TextField
+      <Postulantes isOpen={isOpen} handleClose={handleClose}/>
+   
+     <Box>
+        <Typography variant='body2'>Ingresar Correo electrónico donde se enviaran las respuestas</Typography>
+     <TextField
         id='email'
         type='email'
         label='Correo Electrónico'
@@ -36,6 +37,7 @@ export default function Form (){
         required
         
         />
+     </Box>
 
         <Box sx={{display:'flex',alignItems:'center'}}>
         <Typography variant='body2' sx={{marginRight:'10px'}}>Agregar un Postulante</Typography>
@@ -45,7 +47,9 @@ export default function Form (){
         </Box>
        {form.postulantes.length > 0 && <Applicant/>}
 
-     
-        <Postulantes isOpen={isOpen} handleClose={handleClose}/>
+       <Box className={styles.send} >
+       <Button variant='outlined' >Enviar</Button>
+       </Box>
+        
     </Box>)
 }
