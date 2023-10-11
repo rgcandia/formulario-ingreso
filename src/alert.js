@@ -23,3 +23,19 @@ export function  deletePostulante(){
             timer: 3000
           })
         }
+
+        export function alertSendFormOk(){
+     
+
+            return   Swal.fire(
+              {
+                  title:'Buen trabajo !',
+                  text:'Formulario enviado correctamente, recibiras un correo a la brevedad',
+                  icon:'success',
+                  confirmButtonColor:'#0c3f5c',
+                 
+          
+              }
+              
+            )
+          }

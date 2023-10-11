@@ -3,9 +3,10 @@ import { useDispatch,useSelector } from 'react-redux'
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import Postulantes from './Postulantes/Postulantes';
 import { useState } from 'react';
-import { updateForm } from '../../redux/slice';
+import { resetForm, updateForm } from '../../redux/slice';
 import Applicant from './Applicant/Applicant';
 import styles from './Form.module.css'
+import { alertSendFormOk } from '../../alert';
 export default function Form (){
     //  constantes
     const dispatch = useDispatch();
@@ -21,6 +22,10 @@ export default function Form (){
     const handleChange = (e)=>{
         const { value, id } = e.target;
         dispatch(updateForm({...form,[id]:value}))
+    }
+    const handleSend = ()=>{
+        dispatch(resetForm()) ;
+        alertSendFormOk();
     }
     return (<Box className={styles.form}>
       <Postulantes isOpen={isOpen} handleClose={handleClose} />
@@ -48,7 +53,7 @@ export default function Form (){
        {form.postulantes.length > 0 && <Applicant/>}
 
        <Box className={styles.send} >
-       <Button variant='outlined' >Enviar</Button>
+       <Button variant='outlined' onClick={handleSend} >Enviar</Button>
        </Box>
         
     </Box>)

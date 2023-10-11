@@ -1,3 +1,4 @@
+import { Satellite } from '@mui/icons-material'
 import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
  
@@ -24,11 +25,17 @@ export const stateSlice = createSlice({
         ...state.form.postulantes.slice(index + 1), // Elementos después del índice
       ];
     
+    },
+    resetForm : (state,action)=>{
+    
+      state.form = { 
+         email:'',
+      postulantes:[]}
     }
  
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { updateForm ,setPostulantes,eliminarPostulante} = stateSlice.actions
+export const { updateForm ,setPostulantes,eliminarPostulante,resetForm} = stateSlice.actions
 export default stateSlice.reducer
