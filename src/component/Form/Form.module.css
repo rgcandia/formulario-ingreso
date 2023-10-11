@@ -5,8 +5,11 @@
     height: 100%;
     width: 50%;
    margin-top: 50px;
-  
+   border: 1px solid #000; /* Agrega un borde sólido (puedes ajustar el ancho y el color) */
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Agrega una sombra con desplazamiento cero, sin expansión y un desenfoque de 10px */
+    padding: 20px;
 }
+
 .send{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -15,6 +18,10 @@
     justify-content: center;
     
 
+}
+.postulantes{
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 @media(max-width:600px){

@@ -18,7 +18,7 @@ export default function Form ({handleClose}){
 
     })
     const dispatch = useDispatch();
-    
+   
     //function
     const handleChange = (e) => {
         const { value, id } = e.target;
@@ -32,10 +32,12 @@ export default function Form ({handleClose}){
       const handleSubmit = (e)=>{
         e.preventDefault();
         dispatch(setPostulantes(postulantes));
-        alert('Ejemplo de alerta, postulante guardado');
+       
         handleClose();
       }
     return (<Box className={styles.form} component='form' onSubmit={handleSubmit}>
+        {/* ... (resto del componente) */}
+    
         <Typography variant="h6" textAlign='center'>DATOS DEL POSTULANTE</Typography>
        
         <Box className={styles.items}>

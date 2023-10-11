@@ -1,4 +1,4 @@
-import {Box, TextField, Typography, IconButton, Button} from '@mui/material'
+import {Box, TextField, Typography, IconButton, Button,} from '@mui/material'
 import { useDispatch,useSelector } from 'react-redux'
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import Postulantes from './Postulantes/Postulantes';
@@ -23,10 +23,10 @@ export default function Form (){
         dispatch(updateForm({...form,[id]:value}))
     }
     return (<Box className={styles.form}>
-      <Postulantes isOpen={isOpen} handleClose={handleClose}/>
-   
-     <Box>
-        <Typography variant='body2'>Ingresar Correo electrónico donde se enviaran las respuestas</Typography>
+      <Postulantes isOpen={isOpen} handleClose={handleClose} />
+
+     <Box >
+        <Typography variant='body2' sx={{marginBottom:'10px'}}>Ingresar Correo electrónico donde se enviaran las respuestas</Typography>
      <TextField
         id='email'
         type='email'
@@ -39,7 +39,7 @@ export default function Form (){
         />
      </Box>
 
-        <Box sx={{display:'flex',alignItems:'center'}}>
+        <Box className={styles.postulantes} sx={{display:'flex',alignItems:'center'}}>
         <Typography variant='body2' sx={{marginRight:'10px'}}>Agregar un Postulante</Typography>
             <IconButton onClick={handleOpen}>
                 <PersonAddIcon color='primary'/>

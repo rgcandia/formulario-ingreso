@@ -18,13 +18,34 @@ export default function Applicant (){
                  <Typography variant="body2">{e.nombreCompletoAlumno}</Typography>   
             </AccordionSummary>
             <AccordionDetails>
-                <Typography  variant="body2">Fecha de nacimiento: {e.fechaNacimiento}</Typography>
-                <Typography variant="body2">Nivel a ingresar: {e.nivel}</Typography>
-                <Typography variant="body2">Colegio anterior: {e.colegioAnterior}</Typography>
-                <Typography variant="body2"> </Typography>
-                <Typography variant="body2"> </Typography>
-                <Typography variant="body2"> </Typography>
-                <Typography variant="body2"> </Typography>
+            {e.fechaNacimiento && (
+  <Typography variant="body2">Fecha de nacimiento: {e.fechaNacimiento}</Typography>
+)}
+
+{e.nivel && (
+  <Typography variant="body2">Nivel a ingresar: {e.nivel}</Typography>
+)}
+
+{e.colegioAnterior && (
+  <Typography variant="body2">Colegio anterior: {e.colegioAnterior}</Typography>
+)}
+
+{e.nombreCompletoPadre1 && (
+  <Typography variant="body2">Nombre completo de Tutor 1: {e.nombreCompletoPadre1}</Typography>
+)}
+
+{e.celularPadre1 && (
+  <Typography variant="body2">Celular de contacto de Tutor 1: {e.celularPadre1}</Typography>
+)}
+
+{e.nombreCompletoPadre2 && (
+  <Typography variant="body2">Nombre Completo Tutor 2: {e.nombreCompletoPadre2}</Typography>
+)}
+
+{e.celularPadre2 && (
+  <Typography variant="body2">Celular de contacto de Tutor 2: {e.celularPadre2}</Typography>
+)}
+
             </AccordionDetails>
             <Box>  <IconButton color='primary'>
                 <DeleteForeverIcon/>
