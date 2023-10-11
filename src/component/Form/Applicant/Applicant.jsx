@@ -3,27 +3,28 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useDispatch, useSelector } from "react-redux"
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { eliminarPostulante } from "../../../redux/slice";
+import { deletePostulante } from "../../../alert.js";
 export default function Applicant (){
     const {postulantes} = useSelector(state=>state.data.form)
     const dispatch =  useDispatch();
     const handleDelete = (index)=>{
        dispatch( eliminarPostulante(index))
-       
+       deletePostulante();
     }
     return (<Box>
         
         {postulantes.map((e,index)=>{
             return(
-                <Accordion>
+                <Accordion key={index}>
             <AccordionSummary
                 expandIcon={<ExpandMoreIcon/>}
                 aria-controls={"panel"+index+"-content"}
                 id={index}
-                key={index}
+               
                 >
                  <Typography variant="body2">{e.nombreCompletoAlumno}</Typography>   
             </AccordionSummary>
-            <AccordionDetails key={index}>
+            <AccordionDetails >
             {e.fechaNacimiento && (
   <Typography variant="body2">Fecha de nacimiento: {e.fechaNacimiento}</Typography>
 )}

@@ -4,6 +4,7 @@ import { useDispatch} from "react-redux";
 import SaveIcon from '@mui/icons-material/Save';
 import styles from './Form.module.css'
 import {setPostulantes} from '../../../../redux/slice.js'
+import { addPostulante } from "../../../../alert";
 export default function Form ({handleClose}){
     //variables
     const [postulantes,setPostutalntes] = useState({
@@ -32,8 +33,8 @@ export default function Form ({handleClose}){
       const handleSubmit = (e)=>{
         e.preventDefault();
         dispatch(setPostulantes(postulantes));
-       
         handleClose();
+        addPostulante();
       }
     return (<Box className={styles.form} component='form' onSubmit={handleSubmit}>
         {/* ... (resto del componente) */}
