@@ -8,7 +8,7 @@ export default function Applicant (){
     const dispatch =  useDispatch();
     const handleDelete = (index)=>{
        dispatch( eliminarPostulante(index))
-       console.log(index)
+       
     }
     return (<Box>
         
@@ -19,10 +19,11 @@ export default function Applicant (){
                 expandIcon={<ExpandMoreIcon/>}
                 aria-controls={"panel"+index+"-content"}
                 id={index}
+                key={index}
                 >
                  <Typography variant="body2">{e.nombreCompletoAlumno}</Typography>   
             </AccordionSummary>
-            <AccordionDetails>
+            <AccordionDetails key={index}>
             {e.fechaNacimiento && (
   <Typography variant="body2">Fecha de nacimiento: {e.fechaNacimiento}</Typography>
 )}
