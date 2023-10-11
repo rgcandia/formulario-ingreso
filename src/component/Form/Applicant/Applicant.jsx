@@ -1,10 +1,15 @@
 import { Accordion , AccordionSummary,AccordionDetails , Box, Typography,IconButton} from "@mui/material"
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useEffect } from "react";
+import { eliminarPostulante } from "../../../redux/slice";
 export default function Applicant (){
     const {postulantes} = useSelector(state=>state.data.form)
+    const dispatch =  useDispatch();
+    const handleDelete = (index)=>{
+       dispatch( eliminarPostulante(index))
+       console.log(index)
+    }
     return (<Box>
         
         {postulantes.map((e,index)=>{
@@ -47,9 +52,10 @@ export default function Applicant (){
 )}
 
             </AccordionDetails>
-            <Box>  <IconButton color='primary'>
+            <Box>  <IconButton color='primary' onClick={()=>{handleDelete(index)}}>
                 <DeleteForeverIcon/>
-            </IconButton></Box>
+            </IconButton>
+            </Box>
             </Accordion>
             )
         })}
