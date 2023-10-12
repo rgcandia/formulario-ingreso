@@ -39,7 +39,7 @@ export default function Form ({handleClose}){
     return (<Box className={styles.form} component='form' onSubmit={handleSubmit}>
         {/* ... (resto del componente) */}
     
-        <Typography variant="h6" textAlign='center'>DATOS DEL POSTULANTE</Typography>
+        <Typography variant="h6" textAlign='center' sx={{textDecoration:'underline'}}>DATOS DEL POSTULANTE</Typography>
        
         <Box className={styles.items}>
         <TextField
@@ -52,7 +52,7 @@ export default function Form ({handleClose}){
      required
      />
 <Box>
- <Typography>Fecha de nacimiento</Typography>   
+ <Typography variant='body2' sx={{color:'gray'}}>Fecha de nacimiento</Typography>   
 <TextField
      id='fechaNacimiento'
      type='date'
@@ -143,7 +143,7 @@ export default function Form ({handleClose}){
         </Box>
         
         <Box sx={{display:'flex', alignItems:'center'}}>
-        <Typography variant='body2'><strong>Guardar</strong></Typography>    
+        <Typography variant='body2'>GUARDAR</Typography>    
         <IconButton type='submit' ><SaveIcon color='primary'/></IconButton>
         </Box>
 
