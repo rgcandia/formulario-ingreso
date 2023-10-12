@@ -1,4 +1,4 @@
-import {Box, TextField, Typography, IconButton, Button,} from '@mui/material'
+import {Box, TextField, Typography, IconButton, Button} from '@mui/material'
 import { useDispatch,useSelector } from 'react-redux'
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import Postulantes from './Postulantes/Postulantes';
@@ -7,6 +7,7 @@ import { resetForm, updateForm } from '../../redux/slice';
 import Applicant from './Applicant/Applicant';
 import styles from './Form.module.css'
 import { alertSendFormOk } from '../../alert';
+import MiIcono from '../../images/checkform.png'
 export default function Form (){
     //  constantes
     const dispatch = useDispatch();
@@ -29,9 +30,12 @@ export default function Form (){
     }
     return (<Box className={styles.form}>
       <Postulantes isOpen={isOpen} handleClose={handleClose} />
-
+        <Box className={styles.titleForm}>
+        <Typography variant='h6'  sx={{marginBottom:'10px',marginTop:'10px',textAlign:'center'}} >Formulario</Typography>
+        <Box className={styles.iconoForm}><img alt='icono de formulario' src={MiIcono}/></Box>
+        </Box>
      <Box >
-        <Typography variant='body2' sx={{marginBottom:'10px'}}>Ingresar Correo electrónico donde se enviaran las respuestas</Typography>
+        
      <TextField
         id='email'
         type='email'
@@ -42,6 +46,7 @@ export default function Form (){
         required
         
         />
+        <Typography variant='body2' sx={{marginBottom:'10px',marginTop:'10px'}}>Ingresar tu correo electrónico</Typography>
      </Box>
 
         <Box className={styles.postulantes} sx={{display:'flex',alignItems:'center'}}>
