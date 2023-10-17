@@ -46,7 +46,7 @@ export default function Form (){
         required
         
         />
-        <Typography variant='body2' sx={{marginBottom:'10px',marginTop:'10px'}}>Ingresar tu correo electrónico</Typography>
+        {/* <Typography variant='body2' sx={{marginBottom:'10px',marginTop:'10px'}}>Ingresar tu correo electrónico</Typography> */}
      </Box>
 
         <Box className={styles.postulantes} sx={{display:'flex',alignItems:'center'}}>
